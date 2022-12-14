@@ -16,14 +16,25 @@ We follow an analysis-by-synthesis approach to retrieve all the components of a 
 
 ## Results
 
-The proposed method performs well in both few-shot and many-shot scenarios, outperforming model-based methods like [MVFNet](https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_MVF-Net_Multi-View_3D_Face_Morphable_Model_Regression_CVPR_2019_paper.pdf) and [DFNRMVS](https://openaccess.thecvf.com/content_CVPR_2020/papers/Bai_Deep_Facial_Non-Rigid_Multi-View_Stereo_CVPR_2020_paper.pdf) in 3D face reconstruction from only 3 views, and model-free approaches like [IDR](https://arxiv.org/abs/2003.09852) in full head reconstruction.
+We next evaluate our 3D reconstruction and appearance factorization on multiple real-world portrait photos from the datasets  [H3DS](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html), 3DFAW.  We train the SA-SM and AF-SM priors on the dataset used in H3DS.
 
-Next, we show full head 3D reconstructions from only 3 input images. In these examples, the camera poses have been regressed using a pre-trained [MRL model](https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Ramon_Hyperparameter-Free_Losses_for_Model-Based_Monocular_Reconstruction_ICCVW_2019_paper.pdf), which minimizes the reprojection error. The masks have been estimated using [U2Net](https://arxiv.org/pdf/2005.09007.pdf) and then have been manually refined.
+### 3D reconstruction results
+
+The proposed method performs outperforms model-based methods like [Feng et al.](https://dl.acm.org/doi/abs/10.1145/3450626.3459936) and [Dib et al.](https://openaccess.thecvf.com/content/ICCV2021/html/Dib_Towards_High_Fidelity_Monocular_Face_Reconstruction_With_Rich_Reflectance_Using_ICCV_2021_paper.html) in 3D face reconstruction from only 1 view, and model-free approaches like [H3D-Net](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html) in full head reconstruction.
+
+SIRA recovers the geometry of the head, including hair and shoulders, yielding 3D shapes that clearly retain the identity of the person. Next, we show full head 3D reconstructions from a single input image.
 
 <p align="center">
-  <img src="assets/images/3-views-1.gif" width="350" />
-  <img src="assets/images/3-views-2.gif" width="350" />
+  <img src="assets/images/comp_3d.png" width="700" />
 </p>
+
+<p align="center">
+  <img src="assets/images/3d_0_.gif" width="350" />
+  <img src="assets/images/3d_3_.gif" width="350" />
+</p>
+
+
+### Appearance factorization results
 
 We also provide a qualitative and quantitative comparison with respect to [IDR](https://arxiv.org/abs/2003.09852) varying the number of available views. Note how H3D-Net effectively finds realistic and detailed solutions in both few-shot and many-shot scenarios.
 
@@ -40,12 +51,10 @@ We also provide a qualitative and quantitative comparison with respect to [IDR](
 ## BibTeX
 
 ```
-@inproceedings{ramon2021h3d,
-  title={H3D-Net: Few-Shot High-Fidelity 3D Head Reconstruction},
-  author={Ramon, Eduard and Triginer, Gil and Escur, Janna and Pumarola, Albert and Garcia, Jaime and Giro-i-Nieto, Xavier and Moreno-Noguer, Francesc},
-  journal={arXiv preprint arXiv:2107.12512},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  pages={5620--5629},
-  year={2021}
+@article{caselles2022sira,
+  title={SIRA: Relightable Avatars from a Single Image},
+  author={Caselles, Pol and Ramon, Eduard and Garcia, Jaime and Giro-i-Nieto, Xavier and Moreno-Noguer, Francesc and Triginer, Gil},
+  journal={arXiv preprint arXiv:2209.03027},
+  year={2022}
 }
 ```
