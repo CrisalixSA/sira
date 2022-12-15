@@ -16,11 +16,13 @@ We follow an analysis-by-synthesis approach to retrieve all the components of a 
 
 ## Results
 
-We next evaluate our 3D reconstruction and appearance factorization on multiple real-world portrait photos from the datasets  [H3DS](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html), 3DFAW.  We train the SA-SM and AF-SM priors on the dataset used in H3DS.
+We next evaluate our 3D reconstruction and appearance factorization on multiple real-world portrait photos from the datasets  [H3DS](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html), 3DFAW and CelebA-HQ.  We train the SA-SM and AF-SM priors on the dataset used in H3DS.
+
+
 
 ### 3D reconstruction results
 
-The proposed method performs outperforms model-based methods like [Feng et al.](https://dl.acm.org/doi/abs/10.1145/3450626.3459936) and [Dib et al.](https://openaccess.thecvf.com/content/ICCV2021/html/Dib_Towards_High_Fidelity_Monocular_Face_Reconstruction_With_Rich_Reflectance_Using_ICCV_2021_paper.html) in 3D face reconstruction from only 1 view, and model-free approaches like [H3D-Net](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html) in full head reconstruction.
+The proposed method outperforms parametric model-based methods like [Feng et al.](https://dl.acm.org/doi/abs/10.1145/3450626.3459936) and [Dib et al.](https://openaccess.thecvf.com/content/ICCV2021/html/Dib_Towards_High_Fidelity_Monocular_Face_Reconstruction_With_Rich_Reflectance_Using_ICCV_2021_paper.html) in 3D face reconstruction from only 1 view, and per scene optimitzation approaches like [H3D-Net](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html) in full head reconstruction.
 
 SIRA recovers the geometry of the head, including hair and shoulders, yielding 3D shapes that clearly retain the identity of the person. Next, we show full head 3D reconstructions from a single input image.
 
@@ -34,19 +36,27 @@ SIRA recovers the geometry of the head, including hair and shoulders, yielding 3
 </p>
 
 
+
 ### Appearance factorization results
 
-We also provide a qualitative and quantitative comparison with respect to [IDR](https://arxiv.org/abs/2003.09852) varying the number of available views. Note how H3D-Net effectively finds realistic and detailed solutions in both few-shot and many-shot scenarios.
+We next show our results for the task of appearance factorization. SIRA performs similar to the baselines in the face region and additionally factorizes the intrinsic components of the hair and the upper body. Note that the appearance of the whole head is much more complex and diverse than the appearance of the skin in the facial region. Furthermore, it models high frequency skin specularities, leading to photorealistic re-rendered images.
 
 <p align="center">
-  <img src="assets/images/h3dnet-idr.gif" />
+  <img src="assets/images/comp_app_fac_3dfaw_hr.png" />
 </p>
 
-## Related work
+We also provide results on diverse datasets factorizing the diffuse albedo, diffuse radiance, specular radiance, and the final render. As we are using a phishycal based renderer we can re-render our avatars under new lighting conditions.
 
-1. [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation (2019)](https://arxiv.org/abs/1901.05103)
-2. [Implicit Geometric Regularization for Learning Shapes (2020)](https://arxiv.org/abs/2002.10099)
-3. [Multiview Neural Surface Reconstruction with Implicit Lighting and Material (2020)](https://arxiv.org/abs/2003.09852)
+<p align="center">
+  <img src="assets/images/app_fac_3_datasets.png" />
+</p>
+
+<p align="center">
+  <img src="assets/images/relit_0_.gif" width="350" />
+  <img src="assets/images/relit_1_.gif" width="350" />
+</p>
+
+
 
 ## BibTeX
 
