@@ -1,6 +1,6 @@
 # SIRA
 
-SIRA website ... in progress 🚧🚧
+SIRA project [website](https://crisalixsa.github.io/sira/).
 
 ## Development
 
