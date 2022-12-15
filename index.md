@@ -18,8 +18,6 @@ We follow an analysis-by-synthesis approach to retrieve all the components of a 
 
 We next evaluate our 3D reconstruction and appearance factorization on multiple real-world portrait photos from the datasets  [H3DS](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html), 3DFAW and CelebA-HQ.  We train the SA-SM and AF-SM priors on the dataset used in H3DS.
 
-
-
 ### 3D reconstruction results
 
 The proposed method outperforms parametric model-based methods like [Feng et al.](https://dl.acm.org/doi/abs/10.1145/3450626.3459936) and [Dib et al.](https://openaccess.thecvf.com/content/ICCV2021/html/Dib_Towards_High_Fidelity_Monocular_Face_Reconstruction_With_Rich_Reflectance_Using_ICCV_2021_paper.html) in 3D face reconstruction from only 1 view, and per scene optimitzation approaches like [H3D-Net](https://openaccess.thecvf.com/content/ICCV2021/html/Ramon_H3D-Net_Few-Shot_High-Fidelity_3D_Head_Reconstruction_ICCV_2021_paper.html) in full head reconstruction.
@@ -34,8 +32,6 @@ SIRA recovers the geometry of the head, including hair and shoulders, yielding 3
   <img src="assets/images/3d_0_.gif" width="350" />
   <img src="assets/images/3d_3_.gif" width="350" />
 </p>
-
-
 
 ### Appearance factorization results
 
@@ -55,8 +51,6 @@ We also provide results on diverse datasets factorizing the diffuse albedo, diff
   <img src="assets/images/relit_0_.gif" width="350" />
   <img src="assets/images/relit_1_.gif" width="350" />
 </p>
-
-
 
 ## BibTeX
 
